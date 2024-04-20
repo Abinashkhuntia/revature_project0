@@ -1,0 +1,12 @@
+INFO:user_service:User Created
+ERROR:root:Error in creating new user : no such table: USER
+INFO:main:User Created
+INFO:user_service:User Created
+ERROR:root:Error in creating new user : no such table: USER
+INFO:main:User Created
+INFO:user_service:User Created
+ERROR:root:Error in creating new user : no such table: USER
+INFO:main:User Created
+INFO:user_service:User Created
+INFO:root:User created
+INFO:main:User Created
