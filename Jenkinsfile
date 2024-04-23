@@ -20,5 +20,6 @@ pipeline {
                     sh "docker push ${IMAGE}:lts"
                 }
             }
+        }
     } 
 }
