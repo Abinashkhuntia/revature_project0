@@ -1,19 +1,18 @@
-FROM python:3.11.9-slim-bookworm
+# Use an official Python runtime as a parent image
+FROM python:3.9-slim
 
-WORKDIR /code
+# Set the working directory in the container
+WORKDIR /app
 
-COPY . /code
-
-# COPY ./requirements.txt /code/requirements.txt
-
-RUN pip install -r /code/requirments.txt
-
-
-# ENV DB_ENDPOINT="path"
-# ENV DB_USERNAME="root"
-# ENV DB_PASSWORD="toor"
-
-EXPOSE 80
+# Copy the current directory contents into the container at /app
+COPY . /app
 
 
-CMD  ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "80"]
+# Install any needed dependencies specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Make port 80 available to the world outside this container
+EXPOSE 8000
+
+# Command to run the application
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
